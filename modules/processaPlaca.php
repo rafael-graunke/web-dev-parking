@@ -5,7 +5,7 @@ $placa = $_POST['placa'];
 $veiculo = buscaVeiculo($placa);
 
 if ($veiculo == null) {
-    header("Location: ../home.php?cadastra=true");
+    header("Location: ../home.php?cadastra=true&placa=".$placa);
 } else {
     $registro = buscaUltimoRegistro($veiculo['id']);
 
