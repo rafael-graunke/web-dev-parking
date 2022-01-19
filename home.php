@@ -19,7 +19,7 @@
                     <form action="modules/cadastraVeiculo.php" method="POST">
                         <div class="form-group">
                             <label for="placa" class="col-form-label">Placa:</label>
-                            <input type="text" class="form-control" id="placa" <?php if (isset($_GET['placa'])) {
+                            <input type="text" name="placa" class="form-control" id="placa" <?php if (isset($_GET['placa'])) {
                                                                                     echo "value='" . $_GET['placa'] . "'";
                                                                                 } ?>>
                         </div>

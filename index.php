@@ -4,7 +4,6 @@
 <?php include_once("includes/head.php") ?>
 
 <body>
-    <?php include_once("includes/nav.php") ?>
 
     <div class="wrapper d-flex justify-content-center">
         <div class="login">

@@ -12,7 +12,7 @@ if ($veiculo == null) {
     if ($registro != null) {
         if ($registro['entrada'] != null && $registro['saida'] == null) {
             registraSaida($veiculo['id'], $registro['id']);
-            header("Location: ../home.php?success=saida"); //Alterar
+            header("Location: ../saida.php?placa=".$placa);
         } else if ($registro['entrada'] != null && $registro['saida'] != null) {
             registraEntrada($veiculo['id']);
             header("Location: ../home.php?success=entrada&entrada=".date("H:i:s")."&placa=".$placa);

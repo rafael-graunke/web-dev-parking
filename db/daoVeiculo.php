@@ -40,8 +40,9 @@ function buscaUltimoRegistro($id) {
     $stmt = $conexao->prepare($sql);
     $stmt->bindParam(":id", $id);
     $stmt->execute();
+    $resultados = $stmt->fetchAll();
 
-    $resultado = end($stmt->fetchAll());
+    $resultado = end($resultados);
 
     return $resultado;
 }
