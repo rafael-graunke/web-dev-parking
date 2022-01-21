@@ -14,15 +14,16 @@ function buscaVeiculo($placa) {
     return $resultado;
 }
 
-function cadastraVeiculo($placa, $fabricante, $modelo, $categoria) {
+function cadastraVeiculo($placa, $fabricante, $modelo, $categoria, $cor) {
     $conexao = dbConnect();
-    $sql = "INSERT INTO veiculos VALUES (default, :placa, :fabricante, :modelo, :categoria)";
+    $sql = "INSERT INTO veiculos VALUES (default, :placa, :fabricante, :modelo, :categoria, :cor)";
 
     $stmt = $conexao->prepare($sql);
     $stmt->bindParam(":placa", $placa);
     $stmt->bindParam(":fabricante", $fabricante);
     $stmt->bindParam(":modelo", $modelo);
     $stmt->bindParam(":categoria", $categoria);
+    $stmt->bindParam(":cor", $cor);
     $stmt->execute();
 
 }

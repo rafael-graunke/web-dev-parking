@@ -20,12 +20,16 @@
                         <div class="form-group">
                             <label for="placa" class="col-form-label">Placa:</label>
                             <input type="text" name="placa" class="form-control" id="placa" <?php if (isset($_GET['placa'])) {
-                                                                                    echo "value='" . $_GET['placa'] . "'";
-                                                                                } ?>>
+                                                                                                echo "value='" . $_GET['placa'] . "'";
+                                                                                            } ?>>
                         </div>
                         <div class="form-group">
                             <label for="marca">Marca:</label>
                             <input type="text" name="marca" id="marca" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="marca">Cor:</label>
+                            <input type="text" name="cor" id="cor" class="form-control">
                         </div>
                         <div class="form-group">
                             <label for="modelo" class="col-form-label">Modelo:</label>
@@ -50,25 +54,32 @@
     </div>
     <!-- Modal -->
 
-    <div class="container p-3">
-        <form action="modules/processaPlaca.php" method="POST">
-            <div class="form-group">
-                <input type="text" class="form-control" name="placa" id="placa" placeholder="Placa do Veículo">
+    <div class="wrapper d-flex align-items-center justify-content-center vh-100">
+        <div class="search">
+            <div class="w-100 mb-4">
+                <h1 class="title mx-auto">Parking</h1>
             </div>
-            <div class="form-group d-flex justify-content-end">
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </div>
-        </form>
-        <?php if (isset($_GET['success']) && $_GET['success'] == 'entrada') { ?>
-            <div class="alert alert-success alert-dismissible fade show">
-                <p>Entrada do veículo registrada com sucesso.</p>
-                <p>Placa: <?php echo $_GET['placa'] ?></p>
-                <p>Hora de Entrada: <?php echo $_GET['entrada'] ?></p>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-        <?php } ?>
+            <hr>
+            <h1 class="subtitle">Inserir Placa</h1>
+            <form action="modules/processaPlaca.php" method="POST">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="placa" id="placa" placeholder="Placa do Veículo">
+                </div>
+                <div class="form-group d-flex justify-content-end">
+                    <button type="submit" class="btn btn-primary">Buscar</button>
+                </div>
+            </form>
+            <?php if (isset($_GET['success']) && $_GET['success'] == 'entrada') { ?>
+                <div class="alert alert-success alert-dismissible fade show">
+                    <p>Entrada do veículo registrada com sucesso.</p>
+                    <p>Placa: <?php echo $_GET['placa'] ?></p>
+                    <p>Hora de Entrada: <?php echo $_GET['entrada'] ?></p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <?php } ?>
+        </div>
     </div>
 
     <?php include("includes/foot.php") ?>
