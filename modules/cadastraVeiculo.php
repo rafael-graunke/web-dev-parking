@@ -8,9 +8,9 @@ $categoria = $_POST['categoria'];
 $cor = $_POST['cor'];
 
 if ($placa == "" || $fabricante == "" || $modelo == "" || $categoria == "" || $cor == "") {
-    //Erro
+    header("Location: ../home.php?error=true");
 } else {
     cadastraVeiculo($placa, $fabricante, $modelo, $categoria, $cor);
     registraEntrada(buscaVeiculo($placa)['id']);
-    header("Location: ../home.php");
+    header("Location: ../home.php?success=entrada&entrada=".date("H:i:s")."&placa=".$placa);
 }

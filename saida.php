@@ -21,24 +21,26 @@ $valor = ($diff / 60) * (5.50 / 60);
 
     <?php include("includes/nav.php") ?>
 
-    <div class="wrapper d-flex align-items-center justify-content-center vh-100">
+    <div class="wrapper d-flex align-items-center justify-content-center vh-100 half-bg bg">
         <div class="search">
             <div class="w-100 mb-4">
                 <h1 class="title mx-auto">Parking</h1>
             </div>
             <hr>
-            <div class="row mt-4 mb-4">
-                <div class="col text-center">
-                    <h1 class="subtitle">Entrada:</h1>
-                    <h1 class="subtitle"><?php echo date('H:i:s', strtotime($registro['entrada'])) ?></h1>
-                </div>
-                <div class="col text-center">
-                    <h1 class="subtitle">Saída:</h1>
-                    <h1 class="subtitle"><?php echo date('H:i:s', strtotime($registro['saida'])) ?></h1>
-                </div>
-                <div class="col text-center">
-                    <h1 class="subtitle">Valor:</h1>
-                    <h1 class="subtitle">R$ <?php echo round($valor, 2) ?></h1>
+            <div class="px-5">
+                <div class="row mt-4 mb-4">
+                    <div class="col text-left">
+                        <h1 class="subtitle">Entrada:</h1>
+                        <h1 class="subtitle"><?php echo date('H:i:s', strtotime($registro['entrada'])) ?></h1>
+                    </div>
+                    <div class="col text-center">
+                        <h1 class="subtitle">Saída:</h1>
+                        <h1 class="subtitle"><?php echo date('H:i:s', strtotime($registro['saida'])) ?></h1>
+                    </div>
+                    <div class="col text-right">
+                        <h1 class="subtitle">Valor:</h1>
+                        <h1 class="subtitle">R$ <?php echo round($valor, 2) ?></h1>
+                    </div>
                 </div>
             </div>
             <div class="row">

@@ -9,7 +9,7 @@ $user = buscaUsuario($usuario);
 
 if ($user == null) {
     header("Location: ../index.php?error=true");
-} else if ($user['senha'] == $senha) {
+} else if (password_verify($senha, $user['senha'])) {
     session_start();
     $_SESSION['id'] = $user['id'];
     header("Location: ../home.php");

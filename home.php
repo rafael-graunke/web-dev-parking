@@ -54,7 +54,7 @@
     </div>
     <!-- Modal -->
 
-    <div class="wrapper d-flex align-items-center justify-content-center vh-100">
+    <div class="wrapper d-flex align-items-center justify-content-center vh-100 half-bg bg">
         <div class="search">
             <div class="w-100 mb-4">
                 <h1 class="title mx-auto">Parking</h1>
@@ -62,8 +62,17 @@
             <hr>
             <h1 class="subtitle">Inserir Placa</h1>
             <form action="modules/processaPlaca.php" method="POST">
-                <div class="form-group">
-                    <input type="text" class="form-control" name="placa" id="placa" placeholder="Placa do Veículo">
+                <div class="form-group placa">
+                    <div class="placa-top">
+                        <img src="assets/img/brasil.png" alt="" class="bandeira">
+                        <img src="assets/img/mercosul.png" alt="" class="mercosul">
+                        <p class="text-white">BRASIL</p>
+                    </div>
+                    <div class="placa-bottom">
+                        <input type="text" class="form-control placa-input" name="placa" id="placa" >
+                        <img src="assets/img/qr.png" alt="" class="qr">
+                        <p class="placa-sigla">BR</p>
+                    </div>
                 </div>
                 <div class="form-group d-flex justify-content-end">
                     <button type="submit" class="btn btn-primary">Buscar</button>
@@ -74,6 +83,14 @@
                     <p>Entrada do veículo registrada com sucesso.</p>
                     <p>Placa: <?php echo $_GET['placa'] ?></p>
                     <p>Hora de Entrada: <?php echo $_GET['entrada'] ?></p>
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            <?php } ?>
+            <?php if (isset($_GET['error']) && $_GET['error'] == 'true') { ?>
+                <div class="alert alert-danger alert-dismissible fade show">
+                    <p>Não foi possível cadastrar o veículo. Verifique se todos os campos estão preenchidos.</p>
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
