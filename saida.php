@@ -1,4 +1,5 @@
 <?php include("db/daoVeiculo.php") ?>
+<?php include("modules/auth.php") ?>
 <?php
 $placa = $_GET['placa'];
 $veiculo = buscaVeiculo($placa);
