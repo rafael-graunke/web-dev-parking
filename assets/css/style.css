@@ -72,7 +72,7 @@
 .placa {
     border: black 8px solid;
     border-radius: 15px;
-    height: 175px;    
+    height: 220px;    
     overflow: hidden;
     position: relative;
     box-shadow: 5px 5px 15px rgb(50, 50, 50);
@@ -82,10 +82,10 @@
     height: 100%;
     text-align: center;
     font-family: 'Bebas Neue', cursive;
-    font-size: 92px;
-    line-height: 92px;
+    font-size: 118px;
     color: black;
-    border-radius: 0px;    
+    border-radius: 0px;
+    caret-color: transparent;    
 }
 
 .placa-input:focus {
@@ -98,7 +98,7 @@
     font-size: 32px;
     line-height: 32px;
     text-align: center;    
-    padding-top: 7px;
+    padding-top: 13px;
     background-color: #002eae;
     
 }
@@ -143,5 +143,46 @@
     height: auto;
     position: absolute;
     left: 2px;
-    top: 45px;
+    top: 53px;
+}
+
+.data-container {
+    border: #000 2px solid;
+    border-radius: 10px;
+    text-align: center;
+    height: 150px;
+    width: 150px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.data-container i {
+    display: block;
+    position: absolute;
+    margin-top: -20px;
+    top: 0;
+    font-size: 48px;
+}
+
+.data-container::before {
+    display: block;
+    position: absolute;
+    background-color: white;
+    height: 20px;
+    width: 80px;
+    margin-top: -150px;
+    content: "";
+}
+
+.bi-box-arrow-right {
+    margin-top: -26px !important;
+}
+
+.bi-box-arrow-in-right {
+    margin-top: -26px !important;
 }

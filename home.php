@@ -60,7 +60,7 @@
                 <h1 class="title mx-auto">Parking</h1>
             </div>
             <hr>
-            <h1 class="subtitle">Inserir Placa</h1>
+            <h1 class="subtitle my-3">Digite a placa:</h1>
             <form action="modules/processaPlaca.php" method="POST">
                 <div class="form-group placa">
                     <div class="placa-top">
@@ -69,13 +69,13 @@
                         <p class="text-white">BRASIL</p>
                     </div>
                     <div class="placa-bottom">
-                        <input type="text" class="form-control placa-input" name="placa" id="placa" >
+                        <input type="text" class="form-control placa-input" name="placa" id="placa" placeholder="XXX0X00">
                         <img src="assets/img/qr.png" alt="" class="qr">
                         <p class="placa-sigla">BR</p>
-                    </div>
+                    </div>                    
                 </div>
                 <div class="form-group d-flex justify-content-end">
-                    <button type="submit" class="btn btn-primary">Buscar</button>
+                    <button type="submit" class="btn btn-primary btn-lg">Buscar</button>
                 </div>
             </form>
             <?php if (isset($_GET['success']) && $_GET['success'] == 'entrada') { ?>

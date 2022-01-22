@@ -27,18 +27,18 @@ $valor = ($diff / 60) * (5.50 / 60);
                 <h1 class="title mx-auto">Parking</h1>
             </div>
             <hr>
-            <div class="px-5">
+            <div class="px-3">
                 <div class="row mt-4 mb-4">
-                    <div class="col text-left">
-                        <h1 class="subtitle">Entrada:</h1>
+                    <div class="col data-container">
+                        <i class="bi bi-box-arrow-in-right"></i>
                         <h1 class="subtitle"><?php echo date('H:i:s', strtotime($registro['entrada'])) ?></h1>
                     </div>
-                    <div class="col text-center">
-                        <h1 class="subtitle">Saída:</h1>
+                    <div class="col data-container">
+                        <i class="bi bi-box-arrow-right"></i>
                         <h1 class="subtitle"><?php echo date('H:i:s', strtotime($registro['saida'])) ?></h1>
                     </div>
-                    <div class="col text-right">
-                        <h1 class="subtitle">Valor:</h1>
+                    <div class="col data-container">
+                        <i class="bi bi-cash-coin"></i>
                         <h1 class="subtitle">R$ <?php echo round($valor, 2) ?></h1>
                     </div>
                 </div>
